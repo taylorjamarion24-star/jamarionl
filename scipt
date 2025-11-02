@@ -1,0 +1,41 @@
+// Toggle the "read more" content
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('toggleBtn');
+  const more = document.getElementById('more');
+
+  btn.addEventListener('click', () => {
+    const isOpen = more.classList.toggle('open');
+    btn.textContent = isOpen ? 'Read less' : 'Read more';
+  });
+
+  // Play short tone (uses a tiny embedded audio by default)
+  const playBtn = document.getElementById('playTone');
+  const audio = document.getElementById('tone');
+  playBtn.addEventListener('click', () => {
+    try {
+      audio.currentTime = 0;
+      audio.play();
+    } catch (e) {
+      console.warn('Audio play blocked', e);
+    }
+  });
+
+  // Download zip (creates a simple zip-like blob with files)
+  const download = document.getElementById('downloadZip');
+  download.addEventListener('click', (e) => {
+    e.preventDefault();
+    const files = {
+      'index.html': document.documentElement.outerHTML,
+      'style.css': `/* Your CSS */\n` + (document.querySelector('link[rel="stylesheet"]') ? '' : ''),
+      'script.js': `// Your script (generated from page)`,
+    };
+    // Create a pseudo-download (plain JSON) to avoid adding a third-party lib.
+    const blob = new Blob([JSON.stringify(files, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'page-files.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+});
