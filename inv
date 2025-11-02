@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>What Makes Someone Truly Invincible?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>What Makes Someone Truly Invincible?</h1>
+    <p class="subtitle">A short reflective demo page — HTML, CSS, and a little JS.</p>
+    <nav>
+      <a href="#essay">Essay</a>
+      <a href="#examples">Examples</a>
+      <a href="#media">Media</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="essay" class="card">
+      <h2>Short Reflection</h2>
+      <p id="lead">
+        Invincibility is not the absence of pain, but the ability to be touched by life and remain whole. Click <strong>Read more</strong> to expand.
+      </p>
+      <button id="toggleBtn" class="btn">Read more</button>
+      <div id="more" class="collapsed">
+        <p>
+          The quiet strength that endures hardship, rebuilds after failure, and keeps a steady center in storms—this is the kind of invincibility I find worth pursuing.
+        </p>
+      </div>
+    </section>
+
+    <section id="examples" class="card">
+      <h2>Everyday Examples</h2>
+      <ul>
+        <li>Someone who keeps trying after repeated failure (perseverance).</li>
+        <li>A parent who holds a family together despite hardship.</li>
+        <li>A person who forgives instead of staying bitter.</li>
+      </ul>
+    </section>
+
+    <section id="media" class="card">
+      <h2>Media & Interaction</h2>
+      <p>Press play to hear a short tone, or hover the box below for a subtle animation.</p>
+      <audio id="tone" src="data:audio/wav;base64,UklGRhIAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA="></audio>
+      <button id="playTone" class="btn">Play tone</button>
+
+      <div class="hover-box" title="Hover me">
+        Hover me
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Export / Download</h2>
+      <p>You can download this page as a ZIP of the current files or host it live using GitHub Pages (instructions below).</p>
+      <a href="#" id="downloadZip" class="btn">Download ZIP (sample)</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Built for class demo • HTML/CSS/JS • Hosted with GitHub Pages</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
